@@ -22,7 +22,7 @@ if selected_page == options[0]:
  with r1col2:  
      st.title("Home Page")
  with r2col2:
-     
+    pass     
     
 
 if selected_page == options[1]:
