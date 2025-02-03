@@ -1,6 +1,6 @@
 import streamlit as st
 
-if cart not in st.session_state:
+if 'cart' not in st.session_state:
     st.session_state.cart = []
 
 
