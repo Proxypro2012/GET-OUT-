@@ -22,7 +22,7 @@ if selected_page == options[0]:
  with r1col2:  
      st.title("Home Page")
  with r2col2:
-     taboptions = ["Mens", "Womans", "Childrens")
+     taboptions = ["Mens", "Womans", "Childrens"]
      selected_home_tab = ui.tabs(taboptions)
     
 
