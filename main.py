@@ -40,13 +40,13 @@ if selected_page == options[0]:
       
       
       with r5col1:
-          if st.button("Add to cart", key="ATCRT1):
+          if st.button("Add to cart", key="ATCRT1"):
               pass
       with r5col2:
-          if st.button("Add to cart", key="ATCPT1):
+          if st.button("Add to cart", key="ATCPT1"):
               pass
       with r5col3:
-          if st.button("Add to cart", key="ATCWT1):
+          if st.button("Add to cart", key="ATCWT1"):
               pass
     
     
