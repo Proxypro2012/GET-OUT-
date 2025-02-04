@@ -35,6 +35,8 @@ if selected_page == options[0]:
           st.image("redtoga.png", caption="Red Toga. Price: $14.99")
       with r4col2:
           st.image("purpletoga.png", caption="Purple Toga. Price: $21.99", width=310)
+      with r4col2:
+          st.image("whitetoga.png", caption="White Toga. Price: $11.99", width=310)
     
     
 
