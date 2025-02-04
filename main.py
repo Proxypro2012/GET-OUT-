@@ -26,7 +26,7 @@ if selected_page == options[0]:
  with r2col2:
      taboptions = ["Mens", "Womans", "Childrens"]
      selected_home_tab = ui.tabs(taboptions)
-     if selected_home_tab = taboptions[0]
+     if selected_home_tab = taboptions[0]:
       with r3col2:
           st.tile("Mens Clothing")
     
