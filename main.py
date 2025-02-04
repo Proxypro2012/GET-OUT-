@@ -28,7 +28,7 @@ if selected_page == options[0]:
      selected_home_tab = ui.tabs(taboptions)
      if selected_home_tab == taboptions[0]:
       with r3col2:
-          st.tile("Mens Clothing")
+          st.title("Mens Clothing")
     
 
 if selected_page == options[1]:
