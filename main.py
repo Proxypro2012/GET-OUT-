@@ -33,7 +33,7 @@ if selected_page == options[0]:
       with r4col1:
           st.image("redtoga.png", caption="Red Toga. Price: $14.99")
       with r4col2:
-          st.image("purpletoga.png", caption="Purple Toga. Price: $21.99", width=90)
+          st.image("purpletoga.png", caption="Purple Toga. Price: $21.99", width=400)
     
     
 
