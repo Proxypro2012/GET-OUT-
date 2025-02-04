@@ -37,6 +37,18 @@ if selected_page == options[0]:
           st.image("purpletoga.png", caption="Purple Toga. Price: $21.99", width=310)
       with r4col3:
           st.image("whitetoga.png", caption="White Toga. Price: $11.99", width=310)
+      
+      
+      with r5col1:
+          if st.button("Add to cart"):
+              pass
+      with r5col2:
+          if st.button("Add to cart"):
+              pass
+      with r5col3:
+          if st.button("Add to cart"):
+              pass
+    
     
     
 
