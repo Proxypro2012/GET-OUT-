@@ -1,6 +1,17 @@
 import streamlit as st
 import streamlit_shadcn_ui as ui
 
+# Helper function to get item price
+def get_price(item):
+    prices = {
+        "Red Toga": "$14.99",
+        "Purple Toga": "$21.99",
+        "White Toga": "$11.99"
+    }
+    
+    # Handle case where item might not be found in the dictionary
+    return prices.get(item, "Price Not Available")
+
 # Initialize session state if not already initialized
 if 'cart' not in st.session_state:
     st.session_state.cart = []
@@ -70,14 +81,3 @@ if selected_page == options[1]:
             if item in item_images:  # Ensure item exists in the dictionary
                 price = get_price(item)  # Get the price
                 st.image(item_images[item], caption=f"{item}. Price: {price}", width=200)
-
-# Helper function to get item price
-def get_price(item):
-    prices = {
-        "Red Toga": "$14.99",
-        "Purple Toga": "$21.99",
-        "White Toga": "$11.99"
-    }
-    
-    # Handle case where item might not be found in the dictionary
-    return prices.get(item, "Price Not Available")
