@@ -68,7 +68,8 @@ if selected_page == options[1]:
         # Display each item from the cart
         for item in st.session_state.cart:
             if item in item_images:  # Ensure item exists in the dictionary
-                st.image(item_images[item], caption=f"{item}. Price: {get_price(item)}", width=200)
+                price = get_price(item)  # Get the price
+                st.image(item_images[item], caption=f"{item}. Price: {price}", width=200)
 
 # Helper function to get item price
 def get_price(item):
@@ -77,5 +78,6 @@ def get_price(item):
         "Purple Toga": "$21.99",
         "White Toga": "$11.99"
     }
+    
+    # Handle case where item might not be found in the dictionary
     return prices.get(item, "Price Not Available")
-
