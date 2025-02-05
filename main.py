@@ -7,6 +7,7 @@ if 'cart' not in st.session_state:
 if 'carturl' not in st.session_state:
     st.session_state.carturl = ""
 
+st.session_state.cart = []
 
 
 r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
