@@ -61,11 +61,19 @@ if selected_page == options[0]:
     
 
 if selected_page == options[1]:
-   with r1col2: 
-    
-    st.title("My Cart")
-    st.header("Items:")
-    for i in st.session_state.cart:
-       st.image(st.session_state.carturl, caption=[i], width=200)
+    with r1col2:
+        st.title("My Cart")
+        st.header("Items:")
+        for item in st.session_state.cart:
+            if item in item_images:  # Ensure item exists in the dictionary
+                st.image(item_images[item], caption=f"{item}. Price: {get_price(item)}", width=200)
 
+# Helper function to get item price
+def get_price(item):
+    prices = {
+        "Red Toga": "$14.99",
+        "Purple Toga": "$21.99",
+        "White Toga": "$11.99"
+    }
+    return prices.get(item, "Price Not Available")
 
