@@ -60,6 +60,10 @@ if selected_page == options[0]:
 
 if selected_page == options[1]:
    with r1col2: 
+    
     st.title("My Cart")
+    st.header("Items:")
+    for i in st.session_state.cart:
+       st.image(st.session_state.cart, caption=[i])
 
 
