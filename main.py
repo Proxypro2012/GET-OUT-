@@ -51,7 +51,8 @@ if selected_page == options[0]:
               
       with r5col2:
           if st.button("Add to cart", key="ATCPT1"):
-              pass
+              st.session_state.carturl = "purpletoga.png"
+              st.session_state.cart.append("Purple Toga")
       with r5col3:
           if st.button("Add to cart", key="ATCWT1"):
               pass
