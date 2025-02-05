@@ -1,8 +1,12 @@
 import streamlit as st
 import streamlit_shadcn_ui as ui
 
+
 if 'cart' not in st.session_state:
     st.session_state.cart = []
+if 'carturl' not in st.session_state:
+    st.session_state.carturl = ""
+
 
 
 r1col1, r1col2, r1col3 = st.columns([1, 2, 1])
@@ -41,7 +45,9 @@ if selected_page == options[0]:
       
       with r5col1:
           if st.button("Add to cart", key="ATCRT1"):
-              pass
+              st.session_state.carturl = "redtoga.png"
+              st.session_state.cart.append("Red Toga")
+              
       with r5col2:
           if st.button("Add to cart", key="ATCPT1"):
               pass
