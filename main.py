@@ -65,6 +65,6 @@ if selected_page == options[1]:
     st.title("My Cart")
     st.header("Items:")
     for i in st.session_state.cart:
-       st.image(st.session_state.carturl, caption=[i], width=250)
+       st.image(st.session_state.carturl, caption=[i], width=200)
 
 
