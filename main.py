@@ -82,7 +82,8 @@ if selected_page == options[1]:
         for item in st.session_state.cart:
             if item in item_images:  # Ensure item exists in the dictionary
                 price = get_price(item)  # Get the price
-                total_price += price  # Add price to total
+                total_price += price
+            total_price = total_price*0.0625 + total_price# Add price to total
                 
                 col1, col2 = st.columns([4, 1])
                 with col1:
