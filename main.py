@@ -31,7 +31,7 @@ r4col1, r4col2, r4col3 = st.columns([1, 2, 1])
 r5col1, r5col2, r5col3 = st.columns([1, 2, 1])
 
 options = []
-options.extend(["Home", "My Cart"])
+options.extend(["Home", "Mihi Canistrum"])
 selected_page = st.sidebar.radio("Navigation Menu", options=options)
 
 # Home page logic
