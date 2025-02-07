@@ -59,15 +59,15 @@ if selected_page == options[0]:
             
             # Add to cart buttons
             with r5col1:
-                if st.button("Add to cart", key="ATCRT1"):
+                if st.button("Pone in Canistrum", key="ATCRT1"):
                     st.session_state.cart.append("Red Toga")
                     
             with r5col2:
-                if st.button("Add to cart", key="ATCPT1"):
+                if st.button("Pone in Canistrum", key="ATCPT1"):
                     st.session_state.cart.append("Purple Toga")
                     
             with r5col3:
-                if st.button("Add to cart", key="ATCWT1"):
+                if st.button("Pone in Canistrum", key="ATCWT1"):
                     st.session_state.cart.append("White Toga")
 
 # My Cart page logic
