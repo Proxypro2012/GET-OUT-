@@ -4,13 +4,13 @@ import streamlit_shadcn_ui as ui
 # Helper function to get item price
 def get_price(item):
     prices = {
-        "Red Toga": "$14.99",
-        "Purple Toga": "$21.99",
-        "White Toga": "$11.99"
+        "Red Toga": 14.99,
+        "Purple Toga": 21.99,
+        "White Toga": 11.99
     }
     
     # Handle case where item might not be found in the dictionary
-    return prices.get(item, "Price Not Available")
+    return prices.get(item, 0)  # Default to 0 if not found
 
 # Initialize session state if not already initialized
 if 'cart' not in st.session_state:
@@ -76,8 +76,22 @@ if selected_page == options[1]:
         st.title("My Cart")
         st.header("Items:")
         
-        # Display each item from the cart
+        total_price = 0  # Variable to keep track of the total price
+        
+        # Display each item from the cart with a remove button
         for item in st.session_state.cart:
             if item in item_images:  # Ensure item exists in the dictionary
                 price = get_price(item)  # Get the price
-                st.image(item_images[item], caption=f"{item}. Price: {price}", width=200)
+                total_price += price  # Add price to total
+                
+                col1, col2 = st.columns([4, 1])
+                with col1:
+                    st.image(item_images[item], caption=f"{item}. Price: ${price:.2f}", width=200)
+                with col2:
+                    # Remove from cart button
+                    if st.button(f"Remove {item}", key=f"remove_{item}"):
+                        st.session_state.cart.remove(item)
+
+        # Display total price
+        st.subheader(f"Total Price: ${total_price:.2f}")
+
