@@ -96,8 +96,8 @@ if selected_page == options[1]:
         # Display total price
         st.subheader(f"Total Price: ${total_price:.2f}")
 
-    with r1col2:
-        if st.button("Checkout"):
+    
+    if st.button("Checkout"):
             import streamlit as st
             import smtplib
             from email.mime.text import MIMEText
