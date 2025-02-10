@@ -1,5 +1,8 @@
 import streamlit as st
 import streamlit_shadcn_ui as ui
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 # Helper function to get item price
 def get_price(item):
@@ -9,7 +12,6 @@ def get_price(item):
         "White Toga": 11.99
     }
     
-    # Handle case where item might not be found in the dictionary
     return prices.get(item, 0)  # Default to 0 if not found
 
 # Initialize session state if not already initialized
@@ -77,13 +79,14 @@ if selected_page == options[1]:
         st.header("Items:")
         
         total_price = 0  # Variable to keep track of the total price
-        
+        cart_content = []  # To store the cart items for email body
+
         # Display each item from the cart with a remove button
         for item in st.session_state.cart:
             if item in item_images:  # Ensure item exists in the dictionary
                 price = get_price(item)  # Get the price
                 total_price += price
-                total_price = total_price*0.0625 + total_price# Add price to total
+                total_price = total_price*0.0625 + total_price  # Add price to total
                 
                 col1, col2 = st.columns([4, 1])
                 with col1:
@@ -92,18 +95,21 @@ if selected_page == options[1]:
                     # Remove from cart button
                     if st.button(f"Remove {item}", key=f"remove_{item}"):
                         st.session_state.cart.remove(item)
+                        
+                # Add the item to the cart content list for email
+                cart_content.append(f"{item}: ${price:.2f}")
 
         # Display total price
         st.subheader(f"Total Price: ${total_price:.2f}")
 
-    
-    if st.button("Checkout"):
-            import streamlit as st
-            import smtplib
-            from email.mime.text import MIMEText
-            from email.mime.multipart import MIMEMultipart
-            
-            # Function to send email
+    # Checkout button should only appear when cart is not empty
+    if st.session_state.cart:
+        if st.button("Checkout"):
+            # Generate the cart content for email
+            cart_body = "\n".join(cart_content)
+            cart_body += f"\n\nTotal Price (including tax): ${total_price:.2f}"
+
+            # Send email
             def send_email(recipient, subject, body):
                 sender_email = "iamtheskibidisigma420@gmail.com"  # Your email address
                 sender_password = "hqqd yfbq ccdr hlyy"  # Your email password (or app-specific password)
@@ -133,16 +139,13 @@ if selected_page == options[1]:
                 st.title("Email Sender App")
             
                 recipient_email = st.text_input("Enter recipient's email:")
-                subject = st.text_input("Enter the subject:")
-                message_body = st.text_area("Enter the message body:")
-            
-                if st.button("Send Email"):
-                    if recipient_email and subject and message_body:
-                        result = send_email(recipient_email, subject, message_body)
-                        st.success(result)
-                    else:
-                        st.error("Please fill in all the fields.")
+                
+                if recipient_email:
+                    subject = "Your order is arriving soon!"  # Fixed subject for order
+                    result = send_email(recipient_email, subject, cart_body)
+                    st.success(result)
+                else:
+                    st.error("Please enter a recipient's email.")
             
             if __name__ == "__main__":
                 main()
-
