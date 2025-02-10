@@ -86,7 +86,7 @@ if selected_page == options[1]:
             if item in item_images:  # Ensure item exists in the dictionary
                 price = get_price(item)  # Get the price
                 total_price += price
-                total_price = total_price*0.0625 + total_price  # Add price to total
+                total_price = total_price * 0.0625 + total_price  # Add price to total
                 
                 col1, col2 = st.columns([4, 1])
                 with col1:
@@ -104,48 +104,40 @@ if selected_page == options[1]:
 
     # Checkout button should only appear when cart is not empty
     if st.session_state.cart:
-        if st.button("Checkout"):
-            # Generate the cart content for email
-            cart_body = "\n".join(cart_content)
-            cart_body += f"\n\nTotal Price (including tax): ${total_price:.2f}"
+        recipient_email = st.text_input("Enter recipient's email:")
 
-            # Send email
-            def send_email(recipient, subject, body):
-                sender_email = "iamtheskibidisigma420@gmail.com"  # Your email address
-                sender_password = "hqqd yfbq ccdr hlyy"  # Your email password (or app-specific password)
-            
-                msg = MIMEMultipart()
-                msg['From'] = sender_email
-                msg['To'] = recipient
-                msg['Subject'] = subject
-            
-                # Attach the body with the email
-                msg.attach(MIMEText(body, 'plain'))
-            
-                try:
-                    # Set up the server (for Gmail in this case)
-                    server = smtplib.SMTP('smtp.gmail.com', 587)
-                    server.starttls()
-                    server.login(sender_email, sender_password)
-                    text = msg.as_string()
-                    server.sendmail(sender_email, recipient, text)
-                    server.quit()
-                    return "Email sent successfully!"
-                except Exception as e:
-                    return f"Failed to send email: {e}"
-            
-            # Streamlit app
-            def main():
-                st.title("Email Sender App")
-            
-                recipient_email = st.text_input("Enter recipient's email:")
+        if recipient_email:  # When email is entered
+            if st.button("Checkout"):  # Checkout button appears after entering email
+                # Create the body of the email
+                cart_body = "You ordered:\n"
+                cart_body += "\n".join(cart_content)
+                cart_body += f"\n\nTotal Price (including tax): ${total_price:.2f}"
+
+                # Send email
+                def send_email(recipient, subject, body):
+                    sender_email = "iamtheskibidisigma420@gmail.com"  # Your email address
+                    sender_password = "hqqd yfbq ccdr hlyy"  # Your email password (or app-specific password)
                 
-                if recipient_email:
-                    subject = "Your order is arriving soon!"  # Fixed subject for order
-                    result = send_email(recipient_email, subject, cart_body)
-                    st.success(result)
-                else:
-                    st.error("Please enter a recipient's email.")
-            
-            if __name__ == "__main__":
-                main()
+                    msg = MIMEMultipart()
+                    msg['From'] = sender_email
+                    msg['To'] = recipient
+                    msg['Subject'] = "Your order at shopromanclothing.streamlit.app is arriving soon!"  # Fixed subject
+                
+                    # Attach the body with the email
+                    msg.attach(MIMEText(body, 'plain'))
+                
+                    try:
+                        # Set up the server (for Gmail in this case)
+                        server = smtplib.SMTP('smtp.gmail.com', 587)
+                        server.starttls()
+                        server.login(sender_email, sender_password)
+                        text = msg.as_string()
+                        server.sendmail(sender_email, recipient, text)
+                        server.quit()
+                        st.success("Email sent successfully!")
+                    except Exception as e:
+                        st.error(f"Failed to send email: {e}")
+                
+                send_email(recipient_email, "Your order at shopromanclothing.streamlit.app is arriving soon!", cart_body)
+        else:
+            st.error("Please enter a recipient's email.")
