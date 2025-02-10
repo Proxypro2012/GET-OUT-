@@ -96,3 +96,53 @@ if selected_page == options[1]:
         # Display total price
         st.subheader(f"Total Price: ${total_price:.2f}")
 
+    with r1col2:
+        if st.button("Checkout"):
+            import streamlit as st
+            import smtplib
+            from email.mime.text import MIMEText
+            from email.mime.multipart import MIMEMultipart
+            
+            # Function to send email
+            def send_email(recipient, subject, body):
+                sender_email = "iamtheskibidisigma420@gmail.com"  # Your email address
+                sender_password = "hqqd yfbq ccdr hlyy"  # Your email password (or app-specific password)
+            
+                msg = MIMEMultipart()
+                msg['From'] = sender_email
+                msg['To'] = recipient
+                msg['Subject'] = subject
+            
+                # Attach the body with the email
+                msg.attach(MIMEText(body, 'plain'))
+            
+                try:
+                    # Set up the server (for Gmail in this case)
+                    server = smtplib.SMTP('smtp.gmail.com', 587)
+                    server.starttls()
+                    server.login(sender_email, sender_password)
+                    text = msg.as_string()
+                    server.sendmail(sender_email, recipient, text)
+                    server.quit()
+                    return "Email sent successfully!"
+                except Exception as e:
+                    return f"Failed to send email: {e}"
+            
+            # Streamlit app
+            def main():
+                st.title("Email Sender App")
+            
+                recipient_email = st.text_input("Enter recipient's email:")
+                subject = st.text_input("Enter the subject:")
+                message_body = st.text_area("Enter the message body:")
+            
+                if st.button("Send Email"):
+                    if recipient_email and subject and message_body:
+                        result = send_email(recipient_email, subject, message_body)
+                        st.success(result)
+                    else:
+                        st.error("Please fill in all the fields.")
+            
+            if __name__ == "__main__":
+                main()
+
