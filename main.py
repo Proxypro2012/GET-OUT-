@@ -118,14 +118,6 @@ if selected_page == options[1]:
                 def send_email(recipient, subject, body):
                     sender_email = "iamtheskibidisigma420@gmail.com"  # Your email address
                     sender_password = "hqqd yfbq ccdr hlyy"  # Your email password (or app-specific password)
-                    
-                    # Add the "DO NOT REPLY!" message before the order details
-                    cart_body = "DO NOT REPLY! This is an automated message. Inquire here: https://shopromanclothing.streamlit.app/n"
-                    cart_body += "\n\nYou ordered:\n"  # Add the order details after this
-                    
-                    # Append the cart items to the body
-                    cart_body += "\n".join(cart_content)
-                    cart_body += f"\n\nTotal Price (including tax): ${total_price:.2f}"
                 
                     msg = MIMEMultipart()
                     msg['From'] = sender_email
@@ -133,7 +125,7 @@ if selected_page == options[1]:
                     msg['Subject'] = "Your order at shopromanclothing.streamlit.app is arriving soon!"  # Fixed subject
                 
                     # Attach the body with the email
-                    msg.attach(MIMEText(cart_body, 'plain'))
+                    msg.attach(MIMEText(body, 'plain'))
                 
                     try:
                         # Set up the server (for Gmail in this case)
@@ -146,4 +138,7 @@ if selected_page == options[1]:
                         st.success("Email sent successfully!")
                     except Exception as e:
                         st.error(f"Failed to send email: {e}")
-
+                
+                send_email(recipient_email, "Your order at shopromanclothing.streamlit.app is arriving soon!", cart_body)
+        else:
+            st.error("Please enter a recipient's email.") 
