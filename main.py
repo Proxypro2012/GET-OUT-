@@ -109,6 +109,7 @@ if selected_page == options[1]:
         if recipient_email:  # When email is entered
             if st.button("Checkout"):  # Checkout button appears after entering email
                 # Create the body of the email
+                cart_body = "DO NOT REPLY! This is an automated message. Inquire here: https://shopromanclothing.streamlit.app/n"
                 cart_body = "You ordered:\n"
                 cart_body += "\n".join(cart_content)
                 cart_body += f"\n\nTotal Price (including tax): ${total_price:.2f}"
