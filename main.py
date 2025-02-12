@@ -76,7 +76,7 @@ if selected_page == options[0]:
 
 
             with r6col1:
-               with st.popover("Open popover"):
+               with st.popover("Learn more about this product"):
                   st.markdown("Hello World 👋")
                   
                     
