@@ -75,8 +75,8 @@ if selected_page == options[0]:
                     st.session_state.cart.append("White Toga")
 
 
-
-            if st.popover("Learn more", "", key="ATCRT1"):
+            with r6col1:
+                if st.popover("Learn more", "", key="ATCRT1"):
                     st.session_state.cart.append("Red Toga")
 
 # My Cart page logic
