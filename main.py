@@ -76,7 +76,7 @@ if selected_page == options[0]:
 
 
             with r6col1:
-               st.popover("Learn more", "", key="ATCRT1"):
+               st.popover("Learn more", "", key="ATCRT1")
                     
 
 # My Cart page logic
