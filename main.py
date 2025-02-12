@@ -76,7 +76,9 @@ if selected_page == options[0]:
 
 
             with r6col1:
-               st.popover("Learn more", "", key="ATCRT1")
+               with st.popover("Open popover"):
+                  st.markdown("Hello World 👋")
+                  
                     
 
 # My Cart page logic
