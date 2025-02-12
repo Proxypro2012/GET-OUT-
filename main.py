@@ -106,7 +106,7 @@ if selected_page == options[1]:
 
     # Checkout button should only appear when cart is not empty
     if st.session_state.cart:
-        recipient_email = st.text_input("Enter recipient's email:")
+        recipient_email = st.text_input("Enter email to verify order:")
 
         if recipient_email:  # When email is entered
             if st.button("Checkout"):  # Checkout button appears after entering email
@@ -143,4 +143,4 @@ if selected_page == options[1]:
                 
                 send_email(recipient_email, "Your order at shopromanclothing.streamlit.app is arriving soon!", cart_body)
         else:
-            st.error("Please enter a recipient's email.") 
+            st.error("Please an email address. (example-email@your-domain.com") 
