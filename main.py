@@ -74,6 +74,11 @@ if selected_page == options[0]:
                 if st.button("Pone in Canistrum", key="ATCWT1"):
                     st.session_state.cart.append("White Toga")
 
+
+
+            if st.popover("Learn more", "", key="ATCRT1"):
+                    st.session_state.cart.append("Red Toga")
+
 # My Cart page logic
 if selected_page == options[1]:
     with r1col2:
