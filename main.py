@@ -111,7 +111,7 @@ if selected_page == options[1]:
                     st.image(item_images[item], caption=f"{item}. Price: ${price:.2f}", width=200)
                 with col2:
                     # Remove from cart button
-                    if st.button(f"Remove {item}", key=f"remove_{item}"):
+                    if st.button(f"Pone {item} ex canistra", key=f"remove_{item}"):
                         st.session_state.cart.remove(item)
                         
                 # Add the item to the cart content list for email
