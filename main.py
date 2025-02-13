@@ -48,7 +48,7 @@ if selected_page == options[0]:
         selected_home_tab = ui.tabs(taboptions)
 
 
-        if seleced_home_tab == taboptions[2]:
+        if selected_home_tab == taboptions[2]:
             with r4col1:
                 st.image(item_images["Red Toga"], caption="Red Toga. Price: $14.99")
 
