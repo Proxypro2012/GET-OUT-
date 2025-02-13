@@ -33,7 +33,6 @@ r4col1, r4col2, r4col3 = st.columns([1, 2, 1])
 r5col1, r5col2, r5col3 = st.columns([1, 2, 1])
 r6col1, r6col2, r6col3 = st.columns([1, 2, 1])
 
-
 options = []
 options.extend(["Home", "Mihi Canistrum"])
 selected_page = st.sidebar.radio("Navigation Menu", options=options)
@@ -47,7 +46,6 @@ if selected_page == options[0]:
         taboptions = ["Mens", "Womans", "Childrens"]
         selected_home_tab = ui.tabs(taboptions)
 
-
         if selected_home_tab == taboptions[2]:
             with r4col1:
                 st.image(item_images["Red Toga"], caption="Red Toga. Price: $14.99")
@@ -56,12 +54,9 @@ if selected_page == options[0]:
                 if st.button("Pone in Canistrum", key="ATCRT1"):
                     st.session_state.cart.append("Red Toga")
 
-        
-        
         if selected_home_tab == taboptions[0]:
             with r3col2:
                 st.title("Mens Clothing")
-            
             
             with r4col2:
                 st.image(item_images["Purple Toga"], caption="Purple Toga. Price: $21.99", width=310)
@@ -96,8 +91,6 @@ if selected_page == options[0]:
             pass
 
 # My Cart page logic
-# My Cart page logic
-# My Cart page logic
 if selected_page == options[1]:
     with r1col2:
         st.title("My Cart")
@@ -117,8 +110,11 @@ if selected_page == options[1]:
                 with col1:
                     st.image(item_images[item], caption=f"{item}. Price: ${price:.2f}", width=200)
                 with col2:
+                    # Generate unique key for each button
+                    unique_key = f"remove_{item}_{st.session_state.cart.index(item)}_{hash(item)}"
+                    
                     # Remove from cart button with a unique key for each item
-                    if st.button(f"Pone {item} ex canistra", key=f"remove_{item}_{st.session_state.cart.index(item)}"):
+                    if st.button(f"Pone {item} ex canistra", key=unique_key):
                         st.session_state.cart.remove(item)
                         
                 # Add the item to the cart content list for email
@@ -167,6 +163,3 @@ if selected_page == options[1]:
                 send_email(recipient_email, "Your order at shopromanclothing.streamlit.app is arriving soon!", cart_body)
         else:
             st.error("Please enter an email address. (example-email@your-domain.com)")
-# My Cart page logic
-
-
