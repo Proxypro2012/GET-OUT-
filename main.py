@@ -91,6 +91,7 @@ if selected_page == options[0]:
             pass
 
 # My Cart page logic
+# My Cart page logic
 if selected_page == options[1]:
     with r1col2:
         st.title("My Cart")
@@ -110,8 +111,8 @@ if selected_page == options[1]:
                 with col1:
                     st.image(item_images[item], caption=f"{item}. Price: ${price:.2f}", width=200)
                 with col2:
-                    # Remove from cart button
-                    if st.button(f"Pone {item} ex canistra", key=f"remove_{item}"):
+                    # Remove from cart button with a unique key for each item
+                    if st.button(f"Pone {item} ex canistra", key=f"remove_{item}_{st.session_state.cart.index(item)}"):
                         st.session_state.cart.remove(item)
                         
                 # Add the item to the cart content list for email
@@ -159,4 +160,4 @@ if selected_page == options[1]:
                 
                 send_email(recipient_email, "Your order at shopromanclothing.streamlit.app is arriving soon!", cart_body)
         else:
-            st.error("Please an email address. (example-email@your-domain.com") 
+            st.error("Please enter an email address. (example-email@your-domain.com)")
