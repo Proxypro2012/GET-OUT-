@@ -87,7 +87,7 @@ if selected_page == options[0]:
                with st.popover("Learn more about this product"):
                   st.markdown("Hello World 👋")
             
-        if selected_home_tab == taboption[1]:
+        if selected_home_tab == taboptions[1]:
             pass
 
 # My Cart page logic
