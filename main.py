@@ -46,14 +46,22 @@ if selected_page == options[0]:
     with r2col2:
         taboptions = ["Mens", "Womans", "Childrens"]
         selected_home_tab = ui.tabs(taboptions)
+
+
+        if seleced_home_tab == taboptions[2]:
+            with r4col1:
+                st.image(item_images["Red Toga"], caption="Red Toga. Price: $14.99")
+
+            with r5col1:
+                if st.button("Pone in Canistrum", key="ATCRT1"):
+                    st.session_state.cart.append("Red Toga")
+
+        
         
         if selected_home_tab == taboptions[0]:
             with r3col2:
                 st.title("Mens Clothing")
             
-            # Display items and their buttons
-            with r4col1:
-                st.image(item_images["Red Toga"], caption="Red Toga. Price: $14.99")
             
             with r4col2:
                 st.image(item_images["Purple Toga"], caption="Purple Toga. Price: $21.99", width=310)
@@ -61,10 +69,7 @@ if selected_page == options[0]:
             with r4col3:
                 st.image(item_images["White Toga"], caption="White Toga. Price: $11.99", width=310)
             
-            # Add to cart buttons
-            with r5col1:
-                if st.button("Pone in Canistrum", key="ATCRT1"):
-                    st.session_state.cart.append("Red Toga")
+            # Add to cart button
                     
             with r5col2:
                 if st.button("Pone in Canistrum", key="ATCPT1"):
