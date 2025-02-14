@@ -48,7 +48,7 @@ if selected_page == options[0]:
 
         if selected_home_tab == taboptions[2]:
             with r4col1:
-                st.image(item_images["Toga Praetexta"], caption="Red Toga. Price: $14.99")
+                st.image(item_images["Toga Praetexta"], caption="Toga Praetexta. Price: $14.99")
 
             with r5col1:
                 if st.button("Pone in Canistrum", key="ATCRT1"):
