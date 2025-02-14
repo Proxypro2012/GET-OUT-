@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 # Helper function to get item price
 def get_price(item):
     prices = {
-        "Red Toga": 14.99,
+        "Toga Praetexta": 14.99,
         "Purple Toga": 21.99,
         "White Toga": 11.99
     }
@@ -20,7 +20,7 @@ if 'cart' not in st.session_state:
 
 # Define item images and prices
 item_images = {
-    "Red Toga": "redtoga.png",
+    "Toga Praetexta": "redtoga.png",
     "Purple Toga": "purpletoga.png",
     "White Toga": "whitetoga.png"
 }
@@ -48,7 +48,7 @@ if selected_page == options[0]:
 
         if selected_home_tab == taboptions[2]:
             with r4col1:
-                st.image(item_images["Red Toga"], caption="Red Toga. Price: $14.99")
+                st.image(item_images["Toga Praetexta"], caption="Red Toga. Price: $14.99")
 
             with r5col1:
                 if st.button("Pone in Canistrum", key="ATCRT1"):
