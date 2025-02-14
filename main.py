@@ -75,10 +75,7 @@ if selected_page == options[0]:
                     st.session_state.cart.append("White Toga")
 
 
-            with r6col1:
-               with st.popover("Learn more about this product"):
-                  st.markdown("Hello World 👋")
-           
+            
             with r6col2:
                with st.popover("Learn more about this product"):
                   st.markdown("Hello World 👋")
