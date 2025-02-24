@@ -94,7 +94,7 @@ if selected_page == options[0]:
                 st.title("Childrens Clothing")
             
             with r4col2:
-                st.image(item_images["Lunula"], caption="Lunula". Price: 17.99, width=310)
+                st.image(item_images["Lunula"], caption="Lunula. Price: 17.99", width=310)
             
 
 # My Cart page logic
