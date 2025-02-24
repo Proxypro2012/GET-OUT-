@@ -48,13 +48,7 @@ if selected_page == options[0]:
         taboptions = ["Mens", "Womans", "Childrens"]
         selected_home_tab = ui.tabs(taboptions)
 
-        if selected_home_tab == taboptions[2]:
-            with r4col1:
-                st.image(item_images["Toga Praetexta"], caption="Toga Praetexta. Price: $14.99")
-
-            with r5col1:
-                if st.button("Pone in Canistrum", key="ATCRT1"):
-                    st.session_state.cart.append("Red Toga")
+        
 
         if selected_home_tab == taboptions[0]:
             with r3col2:
@@ -95,6 +89,13 @@ if selected_page == options[0]:
             
             with r4col2:
                 st.image(item_images["Lunula"], caption="Lunula. Price: 17.99", width=310)
+          
+            with r4col1:
+                st.image(item_images["Toga Praetexta"], caption="Toga Praetexta. Price: $14.99")
+
+            with r5col1:
+                if st.button("Pone in Canistrum", key="ATCRT1"):
+                    st.session_state.cart.append("Red Toga")
             
 
 # My Cart page logic
