@@ -9,7 +9,8 @@ def get_price(item):
     prices = {
         "Toga Praetexta": 14.99,
         "Purple Toga": 21.99,
-        "White Toga": 11.99
+        "White Toga": 11.99,
+        "Lunula": 17.99
     }
     
     return prices.get(item, 0)  # Default to 0 if not found
@@ -22,7 +23,8 @@ if 'cart' not in st.session_state:
 item_images = {
     "Toga Praetexta": "redtoga.png",
     "Purple Toga": "purpletoga.png",
-    "White Toga": "whitetoga.png"
+    "White Toga": "whitetoga.png",
+    "Lunula": "lunula.png"
 }
 
 # Create columns for layout
@@ -86,6 +88,14 @@ if selected_page == options[0]:
             
         if selected_home_tab == taboptions[1]:
             pass
+
+        if selected_home_tab == taboptions[2]:
+            with r3col2:
+                st.title("Childrens Clothing")
+            
+            with r4col2:
+                st.image(item_images["Lunula"], caption="Lunula". Price: 17.99", width=310)
+            
 
 # My Cart page logic
 if selected_page == options[1]:
