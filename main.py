@@ -74,7 +74,7 @@ if selected_page == options[0]:
             
             with r6col2:
                with st.popover("Learn more about this product"):
-                  st.markdown("Hello World 👋")
+                  st.markdown("Toga monstrat diginitas et potestas. Toga est elegans et magnus.")
 
             with r6col3:
                with st.popover("Learn more about this product"):
