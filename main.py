@@ -100,6 +100,14 @@ if selected_page == options[0]:
             with r5col2
                 if st.button("Pone in Canistrum", key="ATCRT10"):
                     st.session_state.cart.append("Lunula")
+           
+            with r6col1:
+               with st.popover("Learn more about this product"):
+                  st.markdown("Hello World 👋")
+
+            with r6col2:
+               with st.popover("Learn more about this product"):
+                  st.markdown("Hello World 👋")
             
 
 # My Cart page logic
