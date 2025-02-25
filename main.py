@@ -97,7 +97,7 @@ if selected_page == options[0]:
                 if st.button("Pone in Canistrum", key="ATCRT1"):
                     st.session_state.cart.append("Red Toga")
             
-            with r5col2
+            with r5col2:
                 if st.button("Pone in Canistrum", key="ATCRT10"):
                     st.session_state.cart.append("Lunula")
            
