@@ -78,7 +78,7 @@ if selected_page == options[0]:
 
             with r6col3:
                with st.popover("Learn more about this product"):
-                  st.markdown("Hello World 👋")
+                  st.markdown("Toga est alba. Cives Romani togam albam gerunt. ")
             
         if selected_home_tab == taboptions[1]:
             pass
