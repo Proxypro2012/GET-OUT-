@@ -106,8 +106,8 @@ if selected_page == options[0]:
                   st.markdown("Hello World 👋")
 
             with r6col2:
-               with st.popover("Puellae gerunt lunula circa collum. Lunula dedit tutela ab Oculus mali."):
-                  st.markdown("Hello World 👋")
+               with st.popover("Learn more about this product"):
+                  st.markdown("Puellae gerunt lunula circa collum. Lunula dedit tutela ab Oculus mali.")
             
 
 # My Cart page logic
