@@ -10,7 +10,8 @@ def get_price(item):
         "Toga Praetexta": 14.99,
         "Purple Toga": 21.99,
         "White Toga": 11.99,
-        "Lunula": 17.99
+        "Lunula": 17.99,
+        "Stola": 22.99
     }
     
     return prices.get(item, 0)  # Default to 0 if not found
@@ -24,7 +25,8 @@ item_images = {
     "Toga Praetexta": "redtoga.png",
     "Purple Toga": "purpletoga.png",
     "White Toga": "whitetoga.png",
-    "Lunula": "lunula.png"
+    "Lunula": "lunula.png",
+    "Stola": "stola.png"
 }
 
 # Create columns for layout
@@ -80,8 +82,36 @@ if selected_page == options[0]:
                with st.popover("Learn more about this product"):
                   st.markdown("Toga est alba. Cives Romani togam albam gerunt. Toga quoque est elegans et magnus.")
             
+
+
+
+
+
+
+        
+        
         if selected_home_tab == taboptions[1]:
-            pass
+            with r3col2:
+                st.title("Womens Clothing")
+
+            with r4col2:
+                st.image(item_images["Stola"], caption="Purple Toga. Price: $22.99", width=310)
+
+            with r5col2: 
+                if st.button("Pone in Canistrum", key="ATCRT1"):
+                    st.session_state.cart.append("Stola")
+            with r6col2:
+               with st.popover("Learn more about this product"):
+                  st.markdown("Sigma Boi")
+
+                
+
+
+
+
+
+        
+            
 
         if selected_home_tab == taboptions[2]:
             with r3col2:
