@@ -102,7 +102,7 @@ if selected_page == options[0]:
                     st.session_state.cart.append("Stola")
             with r6col2:
                with st.popover("Learn more about this product"):
-                  st.markdown("Sigma Boi")
+                  st.markdown("Nupta puellae togam gerit. Alter stratum vestis est")
 
                 
 
@@ -133,7 +133,7 @@ if selected_page == options[0]:
            
             with r6col1:
                with st.popover("Learn more about this product"):
-                  st.markdown("Hello World 👋")
+                  st.markdown("Toga praetexta erat vestis senatorum et puerorum Romanorum. Solum cives Romani togā praetextā vestiebantur")
 
             with r6col2:
                with st.popover("Learn more about this product"):
