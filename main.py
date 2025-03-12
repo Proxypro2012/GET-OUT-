@@ -108,13 +108,13 @@ if selected_page == options[0]:
 
 
 
-            with r4col2:
+            with r4col3:
                 st.image(item_images["Palla"], caption="Palla. Pretium: $24.99", width=310)
 
-            with r5col2: 
+            with r5col3: 
                 if st.button("Pone in Canistrum", key="ATCRT521"):
                     st.session_state.cart.append("Palla")
-            with r6col2:
+            with r6col3:
                with st.popover("Learn more about this product"):
                   st.markdown("")
 
