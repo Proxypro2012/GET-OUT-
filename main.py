@@ -137,7 +137,7 @@ if selected_page == options[0]:
 
             with r6col2:
                with st.popover("Learn more about this product"):
-                  st.markdown("Puellae gerunt lunula circa collum.")
+                  st.markdown("Puellae gerunt lunula circa collum. Puellae gerunt lunula usque ad sedecim annos natae sunt.")
             
 
 # My Cart page logic
