@@ -116,7 +116,7 @@ if selected_page == options[0]:
                     st.session_state.cart.append("Palla")
             with r6col3:
                with st.popover("Learn more about this product"):
-                  st.markdown("")
+                  st.markdown("Puellae gerunt palla circa corpus. Puellae gerunt palla ex domus. Haec palla est facta e lana. Est valde puchra et commodus. In pictura, feminae gerit palla. ")
 
 
                 
