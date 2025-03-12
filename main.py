@@ -57,10 +57,10 @@ if selected_page == options[0]:
                 st.title("Mens Clothing")
             
             with r4col2:
-                st.image(item_images["Purple Toga"], caption="Purple Toga. Price: $21.99", width=310)
+                st.image(item_images["Purple Toga"], caption="Purple Toga. Pretium: $21.99", width=310)
             
             with r4col3:
-                st.image(item_images["White Toga"], caption="White Toga. Price: $11.99", width=310)
+                st.image(item_images["White Toga"], caption="White Toga. Pretium: $11.99", width=310)
             
             # Add to cart button
                     
@@ -76,11 +76,11 @@ if selected_page == options[0]:
             
             with r6col2:
                with st.popover("Learn more about this product"):
-                  st.markdown("Haec Toga est purprea. Toga monstrat diginitas et potestas. Toga est elegans et magnus. Toga involvebatur circa corpus.")
+                  st.markdown("Haec Toga est purprea. Toga monstrat diginitas et potestas. Toga est elegans et magnus. Toga involvebatur circa corpus. Toga habet multis coloribus, sed vēnum dāmus ablus et purprea")
 
             with r6col3:
                with st.popover("Learn more about this product"):
-                  st.markdown("Toga est alba. Cives Romani togam albam gerunt. Toga quoque est valde elegans et magnus. Haec toga est facta ē lanā. Est valde puclhat.")
+                  st.markdown("Haec Toga est alba. Cives Romani togam albam gerunt. Toga quoque est valde elegans et magnus. Haec toga est facta ē lanā. Est valde puclhat. Qualitas est valde mirabile!")
             
 
 
@@ -95,7 +95,7 @@ if selected_page == options[0]:
                 st.title("Womens Clothing")
 
             with r4col2:
-                st.image(item_images["Stola"], caption="Purple Toga. Price: $22.99", width=310)
+                st.image(item_images["Stola"], caption="Purple Toga. Pretium: $22.99", width=310)
 
             with r5col2: 
                 if st.button("Pone in Canistrum", key="ATCRT1"):
@@ -118,10 +118,10 @@ if selected_page == options[0]:
                 st.title("Childrens Clothing")
             
             with r4col2:
-                st.image(item_images["Lunula"], caption="Lunula. Price: 17.99", width=310)
+                st.image(item_images["Lunula"], caption="Lunula. Pretium: 17.99", width=310)
           
             with r4col1:
-                st.image(item_images["Toga Praetexta"], caption="Toga Praetexta. Price: $14.99")
+                st.image(item_images["Toga Praetexta"], caption="Toga Praetexta. Pretium: $14.99")
 
             with r5col1:
                 if st.button("Pone in Canistrum", key="ATCRT1"):
@@ -133,11 +133,11 @@ if selected_page == options[0]:
            
             with r6col1:
                with st.popover("Learn more about this product"):
-                  st.markdown("Toga praetexta erat vestis senatorum et puerorum Romanorum. Solum cives Romani togā praetextā vestiebantur")
+                  st.markdown("Toga Praetexta est commodus est pulchra. Cives Romani toga praetexta gerunt. ")
 
             with r6col2:
                with st.popover("Learn more about this product"):
-                  st.markdown("Puellae gerunt lunula circa collum. Lunula dedit tutela ab Oculus mali.")
+                  st.markdown("Puellae gerunt lunula circa collum.")
             
 
 # My Cart page logic
@@ -183,7 +183,7 @@ if selected_page == options[1]:
                 cart_body = "DO NOT REPLY! This is an automated message. Inquire here: https://shopromanclothing.streamlit.app/n"
                 cart_body = "You ordered:\n"
                 cart_body += "\n".join(cart_content)
-                cart_body += f"\n\nTotal Price (including tax): ${total_price:.2f}"
+                cart_body += f"\n\nTotal Pretium (including tax): ${total_price:.2f}"
 
                 # Send email
                 def send_email(recipient, subject, body):
