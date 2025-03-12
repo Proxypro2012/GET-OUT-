@@ -11,7 +11,8 @@ def get_price(item):
         "Purple Toga": 21.99,
         "White Toga": 11.99,
         "Lunula": 17.99,
-        "Stola": 22.99
+        "Stola": 22.99,
+        "Palla": 24.99
     }
     
     return prices.get(item, 0)  # Default to 0 if not found
@@ -26,7 +27,8 @@ item_images = {
     "Purple Toga": "purpletoga.png",
     "White Toga": "whitetoga.png",
     "Lunula": "lunula.png",
-    "Stola": "stola.png"
+    "Stola": "stola.png",
+    "Palla": "palla.jpeg"
 }
 
 # Create columns for layout
@@ -95,7 +97,7 @@ if selected_page == options[0]:
                 st.title("Womens Clothing")
 
             with r4col2:
-                st.image(item_images["Stola"], caption="Purple Toga. Pretium: $22.99", width=310)
+                st.image(item_images["Stola"], caption="Stola. Pretium: $22.99", width=310)
 
             with r5col2: 
                 if st.button("Pone in Canistrum", key="ATCRT1"):
@@ -103,6 +105,19 @@ if selected_page == options[0]:
             with r6col2:
                with st.popover("Learn more about this product"):
                   st.markdown("Nupta puellae togam gerit. Alter stratum vestis est")
+
+
+
+            with r4col2:
+                st.image(item_images["Palla"], caption="Palla. Pretium: $24.99", width=310)
+
+            with r5col2: 
+                if st.button("Pone in Canistrum", key="ATCRT521"):
+                    st.session_state.cart.append("Palla")
+            with r6col2:
+               with st.popover("Learn more about this product"):
+                  st.markdown("")
+
 
                 
 
